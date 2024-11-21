@@ -23,18 +23,18 @@ const projects = [
     description:
       "TimeTales é uma página exclusiva para você e seu par, que mostra a contagem dinâmica do tempo de relacionamento de vocês, um carrossel de fotos e mais alguns detalhes.",
     stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }, { name: "Node.Js" }, { name: "MongoDB" }],
-    image: "/assets/work/thumb1.png",
+    image: "/assets/work/thumb1.webp",
     live: "timetales.com.br",
     github: "",
   },
   {
     num: "02",
-    category: "fullstack",
-    title: "project 2",
-    description: "Descrição do segundo projeto falando do que se trata e as tecnologias usadas.",
+    category: "Minigame",
+    title: "Jogo de Luta",
+    description: "Um jogo de luta simples para dois jogadores.",
     stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
-    image: "/assets/work/thumb1.png",
-    live: "timetales.com.br",
+    image: "/assets/work/thumb2.webp",
+    live: "https://jogo-de-luta-fawn.vercel.app",
     github: "",
   },
 ];
@@ -69,7 +69,7 @@ const Work = () => {
               {/* Descrição */}
               <p className='text-white/60'>{selectedProject.description}</p>
               {/* Stack */}
-              <ul className='flex gap-4'>
+              <ul className='flex flex-wrap gap-4'>
                 {selectedProject.stack.map((item, index) => {
                   return (
                     <li key={index} className='text-xl text-accent'>
@@ -125,7 +125,7 @@ const Work = () => {
                     <div className='h-[460px] relative group flex justify-center items-center bg-pink-50/20'>
                       <div className='absolute top-0 bottom-0 w-full h-full bg-black/10 z-10'></div>
                       <div className='relative w-full h-full'>
-                        <Image src={project.image} fill className='object-cover' alt="" />
+                        <Image src={project.image} fill className='object-cover' alt='imagem do projeto' />
                       </div>
                     </div>
                   </SwiperSlide>

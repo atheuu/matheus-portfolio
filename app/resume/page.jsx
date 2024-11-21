@@ -133,16 +133,34 @@ const Resume = () => {
       className='min-h-[88vh] flex items-center justify-center py-12'
     >
       <div className='container mx-auto'>
-        <Tabs defaultValue='education' className='flex flex-col xl:flex-row gap-[60px]'>
+        <Tabs defaultValue='about' className='flex flex-col xl:flex-row gap-[60px]'>
           <TabsList className='flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6'>
+            <TabsTrigger value='about'>Sobre mim </TabsTrigger>
             <TabsTrigger value='education'>Educação</TabsTrigger>
             <TabsTrigger value='experience'>Experiência</TabsTrigger>
             <TabsTrigger value='skills'>Habilidades</TabsTrigger>
-            <TabsTrigger value='about'>Sobre mim </TabsTrigger>
           </TabsList>
 
           {/* Conteúdo */}
           <div className='min-h-[70vh] w-full'>
+            {/* Sobre mim */}
+            <TabsContent value='about' className='w-full text-center xl:text-left'>
+              <div className='flex flex-col gap-[30px]'>
+                <h3 className='text-4xl font-bold'>{about.title}</h3>
+                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{about.description}</p>
+                <ul className='grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0 gap-4'>
+                  {about.info.map((item, index) => {
+                    return (
+                      <li key={index} className='flex items-center justify-center xl:justify-start gap-4'>
+                        <span className='text-white/60'>{item.fieldName}</span>
+                        <span className='text-md'>{item.fieldValue}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </TabsContent>
+
             {/* Experiência */}
             <TabsContent value='experience' className='w-full'>
               <div className='flex flex-col gap-[30px] text-center xl:text-left'>
@@ -224,24 +242,6 @@ const Resume = () => {
                             </TooltipContent>
                           </Tooltip>
                         </TooltipProvider>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </TabsContent>
-
-            {/* Sobre mim */}
-            <TabsContent value='about' className='w-full text-center xl:text-left'>
-              <div className='flex flex-col gap-[30px]'>
-                <h3 className='text-4xl font-bold'>{about.title}</h3>
-                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{about.description}</p>
-                <ul className='grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0 gap-4'>
-                  {about.info.map((item, index) => {
-                    return (
-                      <li key={index} className='flex items-center justify-center xl:justify-start gap-4'>
-                        <span className='text-white/60'>{item.fieldName}</span>
-                        <span className='text-xl'>{item.fieldValue}</span>
                       </li>
                     );
                   })}

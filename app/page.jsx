@@ -9,13 +9,14 @@ import Stats from "@/components/Stats";
 const Home = () => {
   return (
     <section className='h-full'>
-      <div className='container mx-auto h-full'>
+      <div className='container mx-auto h-full px-4 sm:px-8'>
         <div className='flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24'>
           {/* Conteúdo */}
           <div className='text-center xl:text-left order-2 xl:order-none'>
-            <span className='text-xl'>Desenvolvedor de Software</span>
-            <h1 className='mb-6'>
-              Olá, eu sou o <br /> <span className='text-accent'>Matheus Oliveira</span>
+            <span className='text-lg sm:text-xl'>Desenvolvedor de Software</span>
+            <h1 className='mb-6 text-3xl sm:text-4xl xl:text-5xl leading-tight'>
+              Olá, eu sou o <br />
+              <span className='text-accent'>Matheus Oliveira</span>
             </h1>
             <p className='max-w-[500px] mb-9 text-white/80'>
               Sou um estudante que está desenvolvendo projetos para ganhar experiência. Estou focado em criar
@@ -39,7 +40,7 @@ const Home = () => {
           </div>
           {/* Foto */}
           <div className='order-1 mb-8 xl:order-none xl:mb-0'>
-            <Photo />
+            <Photo className='w-40 sm:w-52 xl:w-64' />
           </div>
         </div>
       </div>

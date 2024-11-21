@@ -5,49 +5,64 @@ import CountUp from "react-countup";
 const stats = [
   {
     num: 2,
-    text: "Anos de experiência",
+    text: (
+      <>
+        Anos de <br /> experiência
+      </>
+    ),
   },
   {
     num: 2,
-    text: "Projetos concluídos",
+    text: (
+      <>
+        Projetos <br /> concluídos
+      </>
+    ),
   },
   {
     num: 8,
-    text: "Tecnologias dominadas",
+    text: (
+      <>
+        Tecnologias <br /> dominadas
+      </>
+    ),
   },
   {
     num: 551,
-    text: "Commits de código",
+    text: (
+      <>
+        Commits de <br /> código
+      </>
+    ),
   },
 ];
 
 const Stats = () => {
   return (
-    <section className="pt-4 pb-12">
-      <div className="container mx-auto">
-        <div className="flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none">
-          {stats.map((item, index) => {
-            return (
-              <div
-                className="flex-1 flex gap-4 items-center justify-center xl:justify-start"
-                key={index}
+    <section className='pt-8 pb-12'>
+      <div className='container mx-auto px-4'>
+        {/* Layout Responsivo */}
+        <div className='grid grid-cols-2 md:grid-cols-4 xl:flex md:justify-around gap-6 max-w-[90vw] mx-auto text-center xl:text-left'>
+          {stats.map((item, index) => (
+            <div
+              key={index}
+              className='flex flex-col xl:flex-row items-center xl:items-start justify-center gap-2 sm:gap-4'
+            >
+              <CountUp
+                end={item.num}
+                duration={5}
+                delay={2}
+                className='text-3xl sm:text-4xl xl:text-6xl font-extrabold text-white'
+              />
+              <p
+                className={`${
+                  typeof item.text === "string" && item.text.length < 15 ? "max-w-[120px]" : "max-w-[180px]"
+                } text-sm sm:text-base text-white/80`}
               >
-                <CountUp
-                  end={item.num}
-                  duration={5}
-                  delay={2}
-                  className="text-4xl xl:text-6xl font-extrabold"
-                />
-                <p
-                  className={`${
-                    item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
-                  } leading-snug text-white/80`}
-                >
-                  {item.text}
-                </p>
-              </div>
-            );
-          })}
+                {item.text}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
