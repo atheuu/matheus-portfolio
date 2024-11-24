@@ -23,8 +23,8 @@ const projects = [
     description:
       "TimeTales é uma página exclusiva para você e seu par, que mostra a contagem dinâmica do tempo de relacionamento de vocês, um carrossel de fotos e mais alguns detalhes.",
     stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }, { name: "Node.Js" }, { name: "MongoDB" }],
-    image: "/assets/work/thumb1.webp",
-    live: "timetales.com.br",
+    image: "/assets/work/thumb1.png",
+    live: "https://timetales.com.br",
     github: "",
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     title: "Jogo de Luta",
     description: "Um jogo de luta simples para dois jogadores.",
     stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
-    image: "/assets/work/thumb2.webp",
+    image: "/assets/work/thumb2.png",
     live: "https://jogo-de-luta-fawn.vercel.app",
     github: "",
   },
@@ -51,7 +51,10 @@ const Work = () => {
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+      }}
       className='min-h-[80vh] flex flex-col justify-center py-12 xl:px-0'
     >
       <div className='container mx-auto'>
@@ -63,7 +66,7 @@ const Work = () => {
                 {selectedProject.num}
               </div>
               {/* Categoria */}
-              <h2 className='text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 captalize'>
+              <h2 className='text-[42px] font-bold leading-[1.3] text-white group-hover:text-accent transition-all duration-500 capitalize'>
                 Projeto {selectedProject.category}
               </h2>
               {/* Descrição */}
@@ -125,7 +128,14 @@ const Work = () => {
                     <div className='h-[460px] relative group flex justify-center items-center bg-pink-50/20'>
                       <div className='absolute top-0 bottom-0 w-full h-full bg-black/10 z-10'></div>
                       <div className='relative w-full h-full'>
-                        <Image src={project.image} fill className='object-cover' alt='imagem do projeto' />
+                        <Image
+                          src={project.image}
+                          priority
+                          quality={100}
+                          fill
+                          alt='imagem do projeto'
+                          className='object-cover'
+                        />
                       </div>
                     </div>
                   </SwiperSlide>

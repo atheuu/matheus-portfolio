@@ -7,7 +7,7 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    title: "Desenvolvimento Web",
+    title: "Front-end",
     description:
       "Criação de sites e aplicações web utilizando tecnologias modernas como HTML, CSS, JavaScript, React, e Next.js. Desde o design responsivo até a implementação de funcionalidades interativas, entrego projetos que aliam desempenho e estética.",
     href: "",
@@ -21,13 +21,6 @@ const services = [
   },
   {
     num: "03",
-    title: "UI/UX Desing",
-    description:
-      "Desenvolvimento de interfaces intuitivas e focadas na experiência do usuário, usando React e Next.js. Dou vida a ideias visuais com foco em usabilidade, performance e acessibilidade.",
-    href: "",
-  },
-  {
-    num: "04",
     title: "ADS",
     description:
       "Ofereço suporte especializado em todas as etapas de desenvolvimento de sistemas. Ajudo a definir as melhores abordagens técnicas, otimizar processos e garantir que cada decisão seja alinhada com os objetivos de negócio.",
