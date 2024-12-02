@@ -39,7 +39,7 @@ const info = [
 
 const Contact = () => {
   const [buttonState, setButtonState] = useState("idle"); // 'idle', 'loading', 'success'
-  const [alert, setAlert] = useState({ visible: true, message: "Mensagem enviada com sucesso!", type: "success" });
+  const [alert, setAlert] = useState({ visible: false, message: "", type: "" });
 
   const showAlert = (message, type) => {
     setAlert({ visible: true, message, type });
