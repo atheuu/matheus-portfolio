@@ -5,6 +5,7 @@ import { FiDownload } from "react-icons/fi";
 import Social from "@/components/Social";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -25,7 +26,12 @@ const Home = () => {
             {/* Currículo & Redes Sociais */}
             <div className='flex flex-col xl:flex-row items-center gap-8'>
               <Button variant='outline' size='lg' className='uppercase flex items-center gap-2'>
-                <span>Download CV</span>
+                <Link
+                  href='https://drive.google.com/file/d/1QoW6CL8ih5qdkBd36P7Uf2K10JPaYCUW/view?usp=sharing'
+                  target='_blank'
+                >
+                  Download CV
+                </Link>
                 <FiDownload className='text-xl' />
               </Button>
               <div className='mb-8 xl:mb-0'>
